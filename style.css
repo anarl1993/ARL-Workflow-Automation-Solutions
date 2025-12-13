@@ -178,23 +178,34 @@ p, li {
 }
 
 /* --- Why Choose Us Section --- */
-.features-list.centered li {
+/* Center the section text */
+#why-choose-us {
     text-align: center;
+}
+
+/* Center the list block */
+.features-list.centered {
+    list-style: none;
     padding-left: 0;
+    margin: 0 auto;       /* centers the whole list */
+    display: inline-block; /* allows the list to center */
+    text-align: left;      /* keeps list text aligned for readability */
+}
+
+/* Blue checkmark before each item */
+.features-list.centered li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
 }
 
 .features-list.centered li::before {
-    position: static;
-    margin-right: 0.5rem;
-}
-
-/* Check icon */
-.features-list li::before {
     content: "✔";
     position: absolute;
     left: 0;
     top: 0;
-    color: #2563eb; /* professional blue */
+    color: #2563eb;  /* professional blue */
     font-weight: 600;
 }
 

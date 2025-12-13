@@ -178,24 +178,32 @@ p, li {
 }
 
 /* --- Why Choose Us Section --- */
-/* Center the section text */
+/* Center the section */
 #why-choose-us {
-    text-align: center;
+    text-align: center;  /* centers title and list container */
+    padding: 2rem 1rem;
 }
 
-/* Center the list block */
+/* Optional: style the title */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Center the list block and remove default bullets */
 .features-list.centered {
-    list-style: none;
+    list-style: none;       /* remove default bullets */
     padding-left: 0;
-    margin: 0 auto;       /* centers the whole list */
-    display: inline-block; /* allows the list to center */
-    text-align: left;      /* keeps list text aligned for readability */
+    margin: 0 auto;         /* center the list */
+    display: inline-block;  /* allows horizontal centering */
+    text-align: left;       /* keeps each line readable */
 }
 
-/* Blue checkmark before each item */
+/* Blue checkmark bullets */
 .features-list.centered li {
     position: relative;
-    padding-left: 1.8rem;
+    padding-left: 1.8rem;  /* space for checkmark */
     margin-bottom: 0.8rem;
     line-height: 1.5;
 }
@@ -205,15 +213,8 @@ p, li {
     position: absolute;
     left: 0;
     top: 0;
-    color: #2563eb;  /* professional blue */
+    color: #2563eb;         /* professional blue */
     font-weight: 600;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .features-list {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* --- Call-to-Action Section --- */

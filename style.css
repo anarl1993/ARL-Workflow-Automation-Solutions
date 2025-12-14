@@ -16,26 +16,26 @@ p, li {
 }
 
 /* Navbar container */
+/* Navbar container */
 .navbar {
     display: flex;
-    justify-content: space-between; /* left and right items */
-    align-items: center;
-    height: 64px;                   /* fixed navbar height */
+    align-items: center;           /* vertical alignment */
+    justify-content: space-between; /* left brand / right links */
+    height: 64px;                  /* navbar height */
     padding: 0 2rem;
-    background-color: #fff;          /* optional, for visibility */
+    background-color: #fff;         /* optional */
 }
 
 /* Brand container (logo + text) */
 .brand {
     display: flex;
-    align-items: left;
-    gap: 0.6rem;
+    align-items: center;
+    gap: 0.6rem;                   /* space between logo and text */
 }
 
 /* Logo sizing */
 .nav-logo {
-    max-height: 100%;
-    height: 36px;           /* fits navbar height */
+    height: 36px;                   /* fits navbar height */
     width: auto;
     object-fit: contain;
 }
@@ -51,36 +51,35 @@ p, li {
 
 /* Nav links container */
 .nav-links {
-    list-style: none;        /* remove bullets */
+    display: flex;                  /* horizontal layout */
+    list-style: none;               /* remove bullets */
     padding: 0;
     margin: 0;
-    display: flex;           /* horizontal layout */
-    align-items: right;
-    gap: 1.75rem;            /* space between links */
-    margin-left: auto;       /* push links to the right */
+    align-items: center;
+    gap: 1.75rem;
 }
 
-/* Individual links */
+/* Individual nav links */
 .nav-links li a {
     font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    color: #000;              /* default black */
-    text-decoration: none;    /* remove underline */
+    color: #000;                     /* default black */
+    text-decoration: none;           /* remove underline */
 }
 
 /* Visited links */
 .nav-links li a:visited {
-    color: #2563eb;           /* professional blue */
+    color: #2563eb;                  /* blue after visit */
 }
 
 /* Hover effect */
 .nav-links li a:hover {
-    color: #2563eb;           /* soft blue hover */
+    color: #2563eb;
     text-decoration: none;
 }
 
-/* Active (clicking) */
+/* Active link */
 .nav-links li a:active {
     color: #1d4ed8;
 }

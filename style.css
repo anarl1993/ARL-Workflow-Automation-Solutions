@@ -47,19 +47,29 @@ nav {
     white-space: nowrap;
 }
 
-/* Nav links */
+/* Base nav link style */
 .nav-links li a {
     font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    color: #000;              /* black text */
-    text-decoration: none;   /* remove underline */
+    color: #000;              /* default black */
+    text-decoration: none;   /* no underline */
 }
 
-/* Optional hover effect (professional, subtle) */
+/* Visited links */
+.nav-links li a:visited {
+    color: #2563eb;           /* professional blue */
+}
+
+/* Hover state */
 .nav-links li a:hover {
-    color: #2563eb;           /* soft blue on hover */
+    color: #2563eb;
     text-decoration: none;
+}
+
+/* Active (clicking) */
+.nav-links li a:active {
+    color: #1d4ed8;
 }
 
 /* --- Hero Section --- */

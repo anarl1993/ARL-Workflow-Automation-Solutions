@@ -35,8 +35,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2.5rem; /* ADJUSTED FONT SIZE FOR BETTER FIT */
-    white-space: normal; /* Allow wrapping to prevent horizontal scrolling */
+    font-size: 2.5rem; /* Keeps the adjusted size */
 }
 
 h2 {

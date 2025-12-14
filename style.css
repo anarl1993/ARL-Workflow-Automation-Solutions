@@ -37,7 +37,6 @@ h1, h2, h3 {
 h1 {
     font-size: 3rem;
     white-space: nowrap; /* Tries to keep the text on a single line */
-    /* Optional: overflow: hidden; text-overflow: ellipsis; if wrapping is a major issue */
 }
 
 h2 {
@@ -142,25 +141,21 @@ section {
 }
 
 #value-prop .container {
-    text-align: center;
+    text-align: center; /* Centers the heading and introductory paragraph */
 }
 
-#value-prop .container p {
-    text-align: center;
-}
-
-/* Value Proposition List Styling (Tightened and Centered) */
+/* Value Proposition List Styling (Bulleted, Centered, Tightened) */
 #value-prop ul {
-    list-style: none;
+    list-style: square outside; /* Adds clear, standard square bullets */
     padding-left: 0;
-    max-width: 600px;
-    margin: 20px auto 0; /* Center the list block */
-    text-align: center;
+    max-width: 600px; /* Controls the width of the centered list block */
+    margin: 20px auto; /* Centers the list block horizontally */
+    text-align: left; /* Aligns the text to the left within the list block */
 }
 
 #value-prop ul li {
-    padding: 5px 0; /* TIGHTER SPACING */
-    line-height: 1.2; /* TIGHTER LINE HEIGHT */
+    padding: 5px 0; /* Tighter vertical spacing */
+    line-height: 1.2; /* Tighter line height within each item */
 }
 
 
@@ -321,11 +316,11 @@ section {
     text-align: center;
 }
 
-/* Styling for the Send Message button */
+/* Styling for the Send Message button (Blue) */
 .form-button button {
     display: inline-block;
     padding: 12px 25px;
-    background-color: var(--primary-color); /* Blue */
+    background-color: var(--primary-color);
     color: white;
     border-radius: 5px;
     font-weight: 600;

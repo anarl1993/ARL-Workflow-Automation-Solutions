@@ -131,34 +131,78 @@ display: flex;
     transform: translateY(-1px);
 }
 
-/* 6. Section Styling */
-section {
-    padding: 60px 5%;
+/* --- Value Proposition Section Styling --- */
+
+.value-prop-section {
+    padding: 60px 20px;
+    background-color: #f7f7f7; /* Light background for contrast */
     text-align: center;
 }
 
-#value-prop {
-    background-color: #f4f7f9;
+.value-prop-section h2 {
+    margin-bottom: 10px;
+    color: #333;
 }
 
-#value-prop .container {
-    text-align: center; /* Centers the heading and introductory paragraph */
+.value-prop-section .subtitle {
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #555;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Value Proposition List Styling (Bulleted, Centered, Tightened) */
-#value-prop ul {
-    list-style: square outside; /* Adds clear, standard square bullets */
-    padding-left: 0;
-    max-width: 600px; /* Controls the width of the centered list block */
-    margin: 20px auto; /* Centers the list block horizontally */
-    text-align: left; /* Aligns the text to the left within the list block */
+.benefits-grid {
+    display: grid;
+    /* Create 2 columns on desktop, 1 on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
 
-#value-prop ul li {
-    padding: 5px 0; /* Tighter vertical spacing */
-    line-height: 1.2; /* Tighter line height within each item */
+.benefit-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
 }
 
+.benefit-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card .icon {
+    font-size: 2.5em; /* Large icon size */
+    display: block;
+    margin-bottom: 15px;
+    color: #007bff; /* Use your primary brand color here */
+}
+
+.benefit-card h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.benefit-card p {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Optional: Ensure the main container is limited */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- End Value Proposition Section Styling --- */
 
 #services {
     padding: 60px 5%;

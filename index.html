@@ -180,45 +180,52 @@
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
 
     <script>
-        function toggleWhatsAppModal() {
-            const modal = document.getElementById('wa-modal');
-            // If display is empty or none, set to flex; otherwise set to none
-            if (modal.style.display === "flex") {
-                modal.style.display = "none";
-            } else {
-                modal.style.display = "flex";
-            }
+    function toggleWhatsAppModal() {
+        const modal = document.getElementById('wa-modal');
+        if (modal.style.display === "flex") {
+            modal.style.display = "none";
+        } else {
+            modal.style.display = "flex";
         }
+    }
 
-        document.getElementById('wa-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+    document.getElementById('wa-form').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-            const name = document.getElementById('wa-name').value;
-            const email = document.getElementById('wa-email').value;
-            const phone = document.getElementById('wa-phone').value;
-            const query = document.getElementById('wa-query').value;
+        const name = document.getElementById('wa-name').value;
+        const email = document.getElementById('wa-email').value;
+        const phone = document.getElementById('wa-phone').value;
+        const query = document.getElementById('wa-query').value;
 
-            // Formats the text for WhatsApp
-            const message = `Hi, I'd like to inquire about your services.%0A%0A` +
-                            `*Name:* ${encodeURIComponent(name)}%0A` +
-                            `*Email:* ${encodeURIComponent(email)}%0A` +
-                            `*Phone:* ${encodeURIComponent(phone)}%0A` +
-                            `*Query:* ${encodeURIComponent(query)}`;
+        // 1. Create a clean, readable string first
+        const rawMessage = `Hi, I'd like to inquire about your services.\n\n` +
+                           `*Name:* ${name}\n` +
+                           `*Email:* ${email}\n` +
+                           `*Phone:* ${phone}\n` +
+                           `*Query:* ${query}`;
 
-            const waNumber = "639495238819";
-            window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+        // 2. Encode the whole message safely for the URL
+        const encodedMessage = encodeURIComponent(rawMessage);
 
+        const waNumber = "639495238819";
+        
+        // 3. Use the most stable WhatsApp API link
+        const waURL = `https://api.whatsapp.com/send?phone=${waNumber}&text=${encodedMessage}`;
+
+        window.open(waURL, '_blank');
+
+        toggleWhatsAppModal();
+        this.reset();
+    });
+
+    // Close modal if clicking outside the box
+    window.onclick = function(event) {
+        const modal = document.getElementById('wa-modal');
+        if (event.target == modal) {
             toggleWhatsAppModal();
-            this.reset();
-        });
-
-        // Close modal if clicking outside the box
-        window.onclick = function(event) {
-            const modal = document.getElementById('wa-modal');
-            if (event.target == modal) {
-                toggleWhatsAppModal();
-            }
         }
-    </script>
+    }
+</script>
+    
 </body>
 </html>

@@ -1,170 +1,133 @@
 /* 1. Global Styles and Reset */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #f8f9fa;
-    --text-color: #333;
-    --heading-color: #2c3e50;
-    --font-family: 'Inter', sans-serif;
+    --primary-color: #0062ff; /* Slightly more vibrant blue */
+    --primary-hover: #004dc9;
+    --secondary-color: #f8faff;
+    --text-color: #4a5568; /* Softer gray for better readability */
+    --heading-color: #1a202c; /* Darker, more professional slate */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --wa-green: #25d366;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: var(--font-family);
-    line-height: 1.4;
+    line-height: 1.6; /* Increased for better flow */
     color: var(--text-color);
     background-color: #fff;
+    -webkit-font-smoothing: antialiased;
 }
 
-.container { width: 85%; max-width: 1100px; margin: 0 auto; padding: 20px 0; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 40px 0; }
 
 /* 2. Typography */
-h1, h2, h3 { color: var(--heading-color); margin-bottom: 0.5em; font-weight: 700; }
-h1 { font-size: 2rem; line-height: 1.2; }
-h2 { font-size: 2rem; text-align: center; margin-bottom: 25px; }
+h1, h2, h3 { color: var(--heading-color); line-height: 1.25; font-weight: 800; letter-spacing: -0.025em; }
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+h2 { font-size: 2.25rem; text-align: center; margin-bottom: 2rem; }
 
 /* 3. Navigation */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 5%; background-color: #fff; position: sticky; top: 0; z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1rem 8%; background-color: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(10px); /* Modern frosted glass effect */
+    position: sticky; top: 0; z-index: 1000;
+    border-bottom: 1px solid #edf2f7;
 }
-.brand { display: flex; align-items: center; }
-.nav-logo { height: 40px; margin-right: 10px; }
-.brand-text { font-size: 1.4rem; font-weight: 700; color: var(--heading-color); }
-.nav-links { list-style: none; display: flex; }
-.nav-links li a { text-decoration: none; color: var(--text-color); padding: 10px 15px; font-weight: 600; }
-.nav-links li a:hover { color: var(--primary-color); }
+.brand { display: flex; align-items: center; gap: 12px; }
+.nav-logo { height: 42px; width: auto; }
+.brand-text { font-size: 1.25rem; font-weight: 800; color: var(--primary-color); }
 
-/* 4. Hero */
-.hero { background-color: #e9f9ff; padding: 80px 5%; text-align: center; }
-.hero p { font-size: 1.15rem; margin: 20px 0 30px; }
+.nav-links { list-style: none; display: flex; gap: 10px; }
+.nav-links li a { 
+    text-decoration: none; color: var(--text-color); 
+    padding: 8px 16px; font-weight: 500; border-radius: 6px;
+    transition: var(--transition);
+}
+.nav-links li a:hover { background-color: var(--secondary-color); color: var(--primary-color); }
+
+/* 4. Hero Section */
+.hero { 
+    background: radial-gradient(circle at top right, #e9f9ff, #ffffff); 
+    padding: 120px 5%; text-align: center; 
+}
+.hero p { font-size: 1.25rem; max-width: 700px; margin: 20px auto 40px; color: #718096; }
+
+/* 5. Buttons */
 .btn {
-    display: inline-block; padding: 12px 25px; background-color: var(--primary-color);
-    color: white; text-decoration: none; border-radius: 5px; font-weight: 600;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 14px 32px; background-color: var(--primary-color);
+    color: white; text-decoration: none; border-radius: 8px; 
+    font-weight: 600; font-size: 1rem; transition: var(--transition);
+    box-shadow: 0 4px 6px -1px rgba(0, 98, 255, 0.2);
 }
+.btn:hover { background-color: var(--primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
-/* 6. Value Prop */
-.value-prop-section { padding: 60px 20px; background-color: #f7f7f7; text-align: center; }
-.benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 30px; }
-.benefit-card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+/* 6. Value Prop / Benefits */
+.value-prop-section { padding: 100px 20px; background-color: #fcfcfd; }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.benefit-card { 
+    background: #fff; padding: 40px; border-radius: 16px; 
+    border: 1px solid #f0f0f0; transition: var(--transition);
+}
+.benefit-card:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: var(--shadow-md); }
 
 /* 7. Services */
-#services { padding: 60px 5%; }
-.service-cards { display: flex; gap: 30px; justify-content: center; margin-top: 40px; }
-.card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 30px; width: 100%; max-width: 450px; }
+#services { padding: 100px 5%; }
+.service-cards { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
+.card { 
+    background: #fff; border-radius: 12px; padding: 40px; flex: 1;
+    min-width: 300px; max-width: 400px; border: 1px solid #edf2f7;
+    box-shadow: var(--shadow-sm);
+}
 
-/* 8. How It Works - FIXED SPACING */
-#how-it-works { background-color: var(--secondary-color); padding: 80px 5%; }
-.steps { display: flex; justify-content: space-between; gap: 30px; margin-top: 50px; }
+/* 8. How It Works - Visual Timeline */
+#how-it-works { background-color: var(--secondary-color); padding: 100px 5%; }
+.steps { display: flex; justify-content: space-between; gap: 40px; }
 .step { flex: 1; text-align: center; position: relative; }
-.step:not(:last-child)::after {
-    content: '→'; position: absolute; top: 25%; right: -20px;
-    font-size: 2rem; color: #ccc; font-weight: 100;
+.step-number { 
+    width: 50px; height: 50px; background: var(--primary-color); color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-weight: 700; font-size: 1.2rem;
+}
+@media (min-width: 769px) {
+    .step:not(:last-child)::after {
+        content: ''; position: absolute; top: 25px; left: calc(50% + 40px);
+        width: calc(100% - 80px); height: 2px; background: #cbd5e0;
+    }
 }
 
-/* 9. Why Choose Us - Centered Layout */
-#why-choose-us {
-    background-color: #fff;
-    padding: 80px 0;
-    text-align: center; /* Centers the "Why Choose Us" title */
-}
-
-.features-list {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-    max-width: 900px; /* Limits width so the bars don't get too long on wide screens */
-    margin: 40px auto 0; /* 'auto' on left/right centers the entire list container */
-}
-
+/* 9. Why Choose Us - List Styling */
+#why-choose-us { padding: 100px 0; background-color: #fff; }
+.features-list { list-style: none; max-width: 800px; margin: 40px auto 0; padding: 0 20px; }
 .features-list li {
-    background: #e9f5ff; /* Light blue bar from your image */
-    padding: 18px 30px;
-    margin-bottom: 10px;
-    font-size: 1.05rem;
-    color: var(--text-color);
-    text-align: left; /* Keeps the text inside the bars aligned to the left */
-    border-radius: 4px; /* Optional: adds a slight roundness like the CTA buttons */
-    width: 100%;
-    display: block;
-    transition: transform 0.2s ease;
+    background: #f0f7ff; padding: 20px 25px; margin-bottom: 12px;
+    border-radius: 12px; display: flex; align-items: center;
+    font-weight: 500; transition: var(--transition);
 }
-
-/* Optional: Slight lift effect when hovering over the bars */
-.features-list li:hover {
-    transform: translateX(5px);
-    background: #def0ff;
+.features-list li::before {
+    content: '✓'; margin-right: 15px; color: var(--primary-color); font-weight: 900;
 }
+.features-list li:hover { transform: scale(1.02); background: #e0efff; }
 
-/* --- 10. Call-to-Action Section 
-#cta {
-    padding: 80px 20px;
-    text-align: center; /* Centers the H2 text */
-    background-color: #ffffff; /* Or your preferred brand color */
-}
-
-#cta h2 {
-    margin-bottom: 30px; /* */
-}
-
-.cta-actions {
-    display: flex;
-    justify-content: center; /* Centers buttons horizontally */
-    align-items: center; /* */
-    gap: 20px; /* Adds 20px of space between the two buttons */
-    flex-wrap: wrap; /* Ensures buttons stack on mobile devices */
-}
-
-/* Ensure buttons look like buttons if not already styled */
-.btn {
-    display: inline-block; /* */
-    padding: 15px 30px; /* */
-    background-color: var(--primary-color); /* Added blue color from your root */
-    color: white;
-    text-decoration: none; /* */
-    border-radius: 5px; /* */
-    font-weight: 600; /* */
-    transition: all 0.3s ease; /* */
-}
-
-.btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-1px);
-}
-
-/* --- WHATSAPP GLOW STYLE --- */
+/* 10. WhatsApp Floating Button */
 .whatsapp-float {
-    position: fixed; bottom: 30px; right: 30px; width: 70px; height: 70px;
-    background-color: rgba(37, 211, 102, 0.3); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; z-index: 10000; cursor: pointer;
-    animation: pulse-wa 3s infinite ease-in-out;
+    position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+    background-color: var(--wa-green); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; z-index: 1000;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
 }
-.whatsapp-float::before {
-    content: ''; position: absolute; width: 52px; height: 52px;
-    background-color: #25d366; border-radius: 50%; z-index: 1;
-}
-.whatsapp-icon { width: 32px; height: 32px; fill: white; position: relative; z-index: 2; }
-.wa-badge {
-    position: absolute; top: 8px; right: 8px; background: #ff3b30; color: white;
-    font-size: 11px; width: 20px; height: 20px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; border: 2px solid white; z-index: 10;
-    animation: badge-shake 5s infinite;
-}
+.whatsapp-float:hover { transform: scale(1.1); }
 
-@keyframes pulse-wa { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
-@keyframes badge-shake { 0%, 90% { transform: scale(1); } 92% { transform: scale(1.2) rotate(10deg); } 94% { transform: scale(1.2) rotate(-10deg); } 100% { transform: scale(1); } }
-
-/* Modal & Footer */
-.wa-modal { display: none; position: fixed; z-index: 10001; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
-.wa-modal-content { background: #fff; margin: 10% auto; padding: 30px; border-radius: 15px; max-width: 400px; position: relative; }
-.wa-submit-btn { background: var(--wa-green); color: white; border: none; width: 100%; padding: 14px; border-radius: 8px; cursor: pointer; }
-footer { background-color: var(--heading-color); color: white; text-align: center; padding: 20px 0; font-size: 0.9rem; }
+/* Footer */
+footer { background: #1a202c; color: #a0aec0; padding: 40px 0; text-align: center; }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .service-cards, .steps { flex-direction: column; align-items: center; }
-    .step:not(:last-child)::after { content: '↓'; right: 50%; bottom: -30px; top: auto; transform: translateX(50%); }
-    .features-list li { padding: 15px 20px; }
+    h1 { font-size: 2.25rem; }
+    .nav-links { display: none; } /* Add a hamburger menu toggle via JS later */
+    .steps { flex-direction: column; gap: 60px; }
 }

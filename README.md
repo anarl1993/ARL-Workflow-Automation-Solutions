@@ -1,17 +1,10 @@
-# CRM & Workflow Automation Portfolio
+# Workflow Automation Solutions
+## Streamlining Business Processes with Intelligent Automation
 
-This is a freelancer portfolio website for Ana Lingatong, showcasing **CRM and workflow automation services** for small businesses.
+Welcome to **ARL Workflow Automation Solutions**. We help businesses eliminate manual tasks and optimize their operations through custom workflow engineering and AI integration.
 
-## Features
-- CRM Automation services
-- Workflow Automation services
-- Contact form for inquiries
-- Portfolio and service details
-
-## Tech Stack
-- HTML5
-- CSS3
-- JavaScript
-
-## Usage
-1. Clone the repository:
+### Our Services:
+* **Custom API Integrations:** Connecting your favorite tools (Zapier, Make, n8n).
+* **AI-Powered Workflows:** Implementing ChatGPT and LLMs into your daily business processes.
+* **CRM & Lead Management:** Automating follow-ups and data entry for sales teams.
+* **Data Pipeline Automation:** Scheduled reporting and automated data synchronization.

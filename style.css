@@ -157,6 +157,21 @@ h2 {
     border-radius: 4px;
 }
 
+/* --- CTA Section Buttons --- */
+#cta {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center; /* This centers the buttons horizontally */
+    align-items: center;
+    gap: 20px;               /* Adds space between the two buttons */
+    flex-wrap: wrap;         /* Allows them to stack on mobile */
+    margin-top: 30px;
+}
+
 /* 10. WhatsApp Modal Background */
 .wa-modal {
     display: none; 
@@ -262,7 +277,23 @@ footer { background: var(--heading-color); color: white; text-align: center; pad
     .navbar { flex-direction: column; text-align: center; }
     .nav-links { margin-top: 15px; }
     .steps, .service-cards { flex-direction: column; }
+    
+    /* Changes arrow direction to down on mobile */
     .step:not(:last-child)::after { content: '↓'; top: auto; bottom: -10px; right: 45%; }
+    
+    /* Stack CTA buttons vertically */
+    .cta-actions { flex-direction: column; } 
+    
+    .cta-actions .btn {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 10px; 
+    }
+    
+    .cta-actions .btn:last-child {
+        margin-bottom: 0; 
+    }
+
     .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
     h1 { font-size: 1.8rem; }
-}
+} /* This is the only bracket that should close the media query */

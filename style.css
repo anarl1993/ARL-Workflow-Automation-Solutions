@@ -64,12 +64,38 @@ h2 { font-size: 2rem; text-align: center; margin-bottom: 25px; }
     font-size: 2rem; color: #ccc; font-weight: 100;
 }
 
-/* 9. Why Choose Us - FIXED BARS */
-#why-choose-us { background-color: #fff; padding: 80px 0; }
-.features-list { list-style: none; width: 100%; }
+/* 9. Why Choose Us - Centered Layout */
+#why-choose-us {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center; /* Centers the "Why Choose Us" title */
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 900px; /* Limits width so the bars don't get too long on wide screens */
+    margin: 40px auto 0; /* 'auto' on left/right centers the entire list container */
+}
+
 .features-list li {
-    background: #e9f5ff; padding: 18px 5%; margin-bottom: 8px;
-    font-size: 1.05rem; width: 100%; display: block;
+    background: #e9f5ff; /* Light blue bar from your image */
+    padding: 18px 30px;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    text-align: left; /* Keeps the text inside the bars aligned to the left */
+    border-radius: 4px; /* Optional: adds a slight roundness like the CTA buttons */
+    width: 100%;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+/* Optional: Slight lift effect when hovering over the bars */
+.features-list li:hover {
+    transform: translateX(5px);
+    background: #def0ff;
 }
 
 /* 10. Call-to-Action Section */
